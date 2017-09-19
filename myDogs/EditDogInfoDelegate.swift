@@ -11,5 +11,5 @@ import UIKit
 
 protocol EditDogInfoDelegate {
     func cancelButtonWasPressed(by: EditViewController)
-     func saveButtonWasPressed(by: EditViewController)
+    func saveButtonWasPressed(by: EditViewController, dogNameEdit : String, dogColorEdit: String, dogTreatEdit: String, image : UIImage?, at: NSIndexPath)
 }

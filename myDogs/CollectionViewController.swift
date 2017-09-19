@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import CoreData
 
 class CollectionViewController: UICollectionViewController, addNewDogInfoDelegate, EditDogInfoDelegate {
 
+    //MOC instance (coreData)
+    let manageObjectContext =  (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-
-    var things = [[Any]]()
+    var things = [Dog]()
     override func viewDidLoad() {
         super.viewDidLoad()
+    fetchAllItems()
     }
     
     //number of views
@@ -25,25 +28,36 @@ class CollectionViewController: UICollectionViewController, addNewDogInfoDelegat
     //populates with the content
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! Mycell
-        cell.imageView.image = things[indexPath.row][3] as? UIImage
-        let title = things[indexPath.row][0] as? String
+
+        let dog = things[indexPath.row]
+        let title = dog.name
         cell.dogNameLabel.text = title
-       
-     
-        
+        cell.imageView.image = UIImage.init(data:dog.photo! as Data)
+ 
         return cell
     }
     
     func addDogInfo(by: AddNewImageViewController, dogName : String,  dogColor : String, dogTreat : String, image : UIImage){
-        things.append([dogName, dogColor, dogTreat, image])
+        let newDog = NSEntityDescription.insertNewObject(forEntityName: "Dog", into: manageObjectContext)  as! Dog
+        newDog.name = dogName
+        newDog.color = dogColor
+        newDog.favoriteTreat = dogTreat
+        newDog.photo = UIImagePNGRepresentation(image)! as NSData
+        
+        things.append(newDog)
+        
+        do {
+            
+            try manageObjectContext.save()
+            
+        } catch {
+            print("\(error)")
+        }
         collectionView?.reloadData()
         navigationController?.popViewController(animated: true)
        
     }
-//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "editDogSegue", sender: indexPath)
-//        print("I was click")
-//    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -58,24 +72,58 @@ class CollectionViewController: UICollectionViewController, addNewDogInfoDelegat
             
             let indexPath = self.collectionView!.indexPath(for: sender as! UICollectionViewCell)!
         
-            let dogName = things[indexPath.row][0]
-            let dogColor = things[indexPath.row][1]
-            let dogTreat = things[indexPath.row][2]
-            destination.dogName = dogName as? String
-            destination.dogColor = dogColor as? String
-            destination.dogTreat = dogTreat as? String
+            let dog = things[indexPath.row]
+            let dogName = dog.name
+            let dogColor = dog.color
+            let dogTreat = dog.favoriteTreat
+            destination.dogName = dogName
+            destination.dogColor = dogColor
+            destination.dogTreat = dogTreat
+            destination.dogImage = UIImage.init(data:dog.photo! as Data)
+        
+            destination.indexPath = indexPath as NSIndexPath
         }
     }
     
     func cancelButtonWasPressed(by: EditViewController) {
-        print("please work")
         dismiss(animated: true, completion: nil)
     }
     
-    func saveButtonWasPressed(by: EditViewController) {
-        print("hey:")
+    func saveButtonWasPressed(by: EditViewController, dogNameEdit : String, dogColorEdit: String, dogTreatEdit: String, image : UIImage?, at : NSIndexPath){
+        let newDog = NSEntityDescription.insertNewObject(forEntityName: "Dog", into: manageObjectContext)  as! Dog
+        newDog.name = dogNameEdit
+        newDog.color = dogColorEdit
+        newDog.favoriteTreat = dogTreatEdit
+        newDog.photo = UIImagePNGRepresentation(image!)! as NSData
+    
+        things.append(newDog)
+        
+        do {
+            
+            try manageObjectContext.save()
+            
+        } catch {
+            print("\(error)")
+        }
+       
+        collectionView?.reloadData()
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    //fetch data from the database
+    func fetchAllItems() {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Dog")
+        do {
+            //fetching the data from the dataBase and putting into the todos array
+            let result = try manageObjectContext.fetch(request)
+            things = result as! [Dog]
+            
+        } catch {
+            print("\(error)")
+        }
+    }
+    
     
 
 }

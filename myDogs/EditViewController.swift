@@ -8,12 +8,14 @@
 
 import UIKit
 
-class EditViewController: UIViewController  {
+class EditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     var delegate : EditDogInfoDelegate? 
     
     var dogName : String?
     var dogColor: String?
     var dogTreat: String?
+    var dogImage: UIImage?
+    var indexPath : NSIndexPath?
     @IBOutlet weak var dogNameEdit: UITextField!
     @IBOutlet weak var dogColorEdit: UITextField!
     @IBOutlet weak var dogTreatEdit: UITextField!
@@ -22,35 +24,46 @@ class EditViewController: UIViewController  {
     @IBOutlet weak var dogImageEdit: UIImageView!
     
     @IBAction func cancelButtonWasPressef(_ sender: UIBarButtonItem) {
-        print("cancel button pressed")
         delegate?.cancelButtonWasPressed(by: self)
-        
     }
     
     
     @IBAction func saveButtonWasPressed(_ sender: UIBarButtonItem) {
-        print("save button was pressed")
-        delegate?.saveButtonWasPressed(by: self)
+        
+        delegate?.saveButtonWasPressed(by: self, dogNameEdit : dogNameEdit.text!, dogColorEdit: dogColorEdit.text!, dogTreatEdit: dogTreatEdit.text!, image: dogImageEdit!.image, at: indexPath!)
+
+    
+    }
+//    
+    //edit picture
+    @IBAction func changeImageButtonWasPressed(_ sender: UIButton) {
+        
+        //inititialize the variable
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+        
     }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        let selectedPhoto = info[UIImagePickerControllerOriginalImage] as! UIImage
+        dogImageEdit.image = selectedPhoto
+        dismiss(animated: true, completion: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         dogNameEdit.text = dogName
-        print("hahhahha",
-             dogName)
         dogColorEdit.text = dogColor
         dogTreatEdit.text = dogTreat
+        dogImageEdit.image = dogImage
 
-
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-
 
 }

@@ -197,6 +197,17 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <state key="normal" title="DELETE DOG"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyL-2E-Pm6">
+                                <rect key="frame" x="111" y="323" width="159" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Change Image">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeImageButtonWasPressed:" destination="49Z-0C-vMt" eventType="touchUpInside" id="jhu-i6-qFW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -220,6 +231,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sx7-p5-ETi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hhl-D1-8Lq">
+                    <connections>
+                        <action selector="changePhotoWasPressed:" destination="49Z-0C-vMt" id="bA3-ds-lPF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4375.1999999999998" y="98.50074962518741"/>
         </scene>
