@@ -12,7 +12,8 @@ import UIKit
 
 class Mycell : UICollectionViewCell {
     
-    @IBOutlet weak var dogNameButton: UIButton!
+
+    @IBOutlet weak var dogNameLabel: UILabel!
     
     @IBOutlet weak var imageView: UIImageView!
    

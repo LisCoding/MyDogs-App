@@ -13,7 +13,7 @@
         <scene sceneID="9Dn-dG-Fgg">
             <objects>
                 <collectionViewController id="grx-mZ-CON" customClass="CollectionViewController" customModule="myDogs" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Qyv-8S-uBn">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Qyv-8S-uBn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,16 +34,13 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QMQ-Je-PI9">
                                             <rect key="frame" x="0.0" y="0.0" width="168" height="194"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qn3-Aq-37f">
-                                            <rect key="frame" x="0.0" y="77" width="168" height="40"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9c-Se-Lfp">
+                                            <rect key="frame" x="0.0" y="87" width="156" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <state key="normal" title="Button"/>
-                                            <connections>
-                                                <action selector="dogNameButton:" destination="Znh-wl-AUW" eventType="touchUpInside" id="Jw0-GK-pqi"/>
-                                                <segue destination="OHN-Tp-00b" kind="presentation" identifier="editDogSegue" id="iZo-Rw-ZCa"/>
-                                            </connections>
-                                        </button>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,8 +51,9 @@
                                     <constraint firstAttribute="bottom" secondItem="QMQ-Je-PI9" secondAttribute="bottom" id="g0Y-pB-ciH"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="dogNameButton" destination="Qn3-Aq-37f" id="2ET-G4-GgY"/>
+                                    <outlet property="dogNameLabel" destination="q9c-Se-Lfp" id="0Ir-xz-Eat"/>
                                     <outlet property="imageView" destination="QMQ-Je-PI9" id="suJ-XZ-bHn"/>
+                                    <segue destination="OHN-Tp-00b" kind="presentation" identifier="editDogSegue" id="FTZ-WB-ycZ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -74,7 +72,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2y-8W-LLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1986" y="-112"/>
+            <point key="canvasLocation" x="1984.8" y="-112.89355322338831"/>
         </scene>
         <!--Add New Image View Controller-->
         <scene sceneID="hqF-9P-lDw">

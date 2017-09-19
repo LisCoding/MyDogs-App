@@ -11,6 +11,7 @@ import UIKit
 class CollectionViewController: UICollectionViewController, addNewDogInfoDelegate, EditDogInfoDelegate {
 
 
+
     var things = [[Any]]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +26,9 @@ class CollectionViewController: UICollectionViewController, addNewDogInfoDelegat
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! Mycell
         cell.imageView.image = things[indexPath.row][3] as? UIImage
-        var title = things[indexPath.row][0] as? String
-
-        cell.dogNameButton.setTitle(title, for: .normal)
+        let title = things[indexPath.row][0] as? String
+        cell.dogNameLabel.text = title
+       
      
         
         return cell
@@ -39,24 +40,30 @@ class CollectionViewController: UICollectionViewController, addNewDogInfoDelegat
         navigationController?.popViewController(animated: true)
        
     }
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: "editDogSegue", sender: indexPath)
+//        print("I was click")
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "addNewDogSegue" {
             let destination = segue.destination as! AddNewImageViewController
             destination.delegate = self
-        } else if segue.identifier == "editSegue" {
+        } else if segue.identifier == "editDogSegue" {
             let navigationController = segue.destination as! UINavigationController
             let destination = navigationController.topViewController as! EditViewController
             destination.delegate = self
             //pass info along
-            let indexPath = sender as! NSIndexPath
+            
+            let indexPath = self.collectionView!.indexPath(for: sender as! UICollectionViewCell)!
+        
             let dogName = things[indexPath.row][0]
             let dogColor = things[indexPath.row][1]
             let dogTreat = things[indexPath.row][2]
-            destination.dogName = dogName as! String
-            destination.dogColor = dogColor as! String
-            destination.dogTreat = dogTreat as! String
+            destination.dogName = dogName as? String
+            destination.dogColor = dogColor as? String
+            destination.dogTreat = dogTreat as? String
         }
     }
     
