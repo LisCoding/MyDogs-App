@@ -8,22 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		7F249AB91F7050D7002A0220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F249AB81F7050D7002A0220 /* AppDelegate.swift */; };
-		7F249ABB1F7050D7002A0220 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F249ABA1F7050D7002A0220 /* ViewController.swift */; };
+		7F249ABB1F7050D7002A0220 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F249ABA1F7050D7002A0220 /* CollectionViewController.swift */; };
 		7F249ABE1F7050D7002A0220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F249ABC1F7050D7002A0220 /* Main.storyboard */; };
 		7F249AC11F7050D7002A0220 /* myDogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F249ABF1F7050D7002A0220 /* myDogs.xcdatamodeld */; };
 		7F249AC31F7050D7002A0220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F249AC21F7050D7002A0220 /* Assets.xcassets */; };
 		7F249AC61F7050D7002A0220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F249AC41F7050D7002A0220 /* LaunchScreen.storyboard */; };
+		7F477D831F70567500B111B6 /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F477D821F70567500B111B6 /* myCell.swift */; };
+		7F477D871F70589C00B111B6 /* bunny1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F477D841F70589C00B111B6 /* bunny1.jpg */; };
+		7F477D881F70589C00B111B6 /* bunny2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F477D851F70589C00B111B6 /* bunny2.jpg */; };
+		7F477D891F70589C00B111B6 /* bunny3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7F477D861F70589C00B111B6 /* bunny3.jpeg */; };
+		7F477D8B1F705A5000B111B6 /* AddNewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F477D8A1F705A5000B111B6 /* AddNewImageViewController.swift */; };
+		7F477D8D1F70690E00B111B6 /* AddNewDogInfoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F477D8C1F70690E00B111B6 /* AddNewDogInfoDelegate.swift */; };
+		7F477D8F1F707E8200B111B6 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F477D8E1F707E8200B111B6 /* EditViewController.swift */; };
+		7F477D911F708E3400B111B6 /* EditDogInfoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F477D901F708E3400B111B6 /* EditDogInfoDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7F249AB51F7050D7002A0220 /* myDogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myDogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F249AB81F7050D7002A0220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7F249ABA1F7050D7002A0220 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7F249ABA1F7050D7002A0220 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		7F249ABD1F7050D7002A0220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F249AC01F7050D7002A0220 /* myDogs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myDogs.xcdatamodel; sourceTree = "<group>"; };
 		7F249AC21F7050D7002A0220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F249AC51F7050D7002A0220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F249AC71F7050D7002A0220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F477D821F70567500B111B6 /* myCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myCell.swift; sourceTree = "<group>"; };
+		7F477D841F70589C00B111B6 /* bunny1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bunny1.jpg; path = ../../../../Documents/bunny1.jpg; sourceTree = "<group>"; };
+		7F477D851F70589C00B111B6 /* bunny2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bunny2.jpg; path = ../../../../Documents/bunny2.jpg; sourceTree = "<group>"; };
+		7F477D861F70589C00B111B6 /* bunny3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bunny3.jpeg; path = ../../../../Documents/bunny3.jpeg; sourceTree = "<group>"; };
+		7F477D8A1F705A5000B111B6 /* AddNewImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewImageViewController.swift; sourceTree = "<group>"; };
+		7F477D8C1F70690E00B111B6 /* AddNewDogInfoDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewDogInfoDelegate.swift; sourceTree = "<group>"; };
+		7F477D8E1F707E8200B111B6 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		7F477D901F708E3400B111B6 /* EditDogInfoDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDogInfoDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +73,17 @@
 			isa = PBXGroup;
 			children = (
 				7F249AB81F7050D7002A0220 /* AppDelegate.swift */,
-				7F249ABA1F7050D7002A0220 /* ViewController.swift */,
+				7F249ABA1F7050D7002A0220 /* CollectionViewController.swift */,
 				7F249ABC1F7050D7002A0220 /* Main.storyboard */,
+				7F477D901F708E3400B111B6 /* EditDogInfoDelegate.swift */,
+				7F477D8E1F707E8200B111B6 /* EditViewController.swift */,
+				7F477D8C1F70690E00B111B6 /* AddNewDogInfoDelegate.swift */,
+				7F477D8A1F705A5000B111B6 /* AddNewImageViewController.swift */,
+				7F477D821F70567500B111B6 /* myCell.swift */,
 				7F249AC21F7050D7002A0220 /* Assets.xcassets */,
+				7F477D841F70589C00B111B6 /* bunny1.jpg */,
+				7F477D851F70589C00B111B6 /* bunny2.jpg */,
+				7F477D861F70589C00B111B6 /* bunny3.jpeg */,
 				7F249AC41F7050D7002A0220 /* LaunchScreen.storyboard */,
 				7F249AC71F7050D7002A0220 /* Info.plist */,
 				7F249ABF1F7050D7002A0220 /* myDogs.xcdatamodeld */,
@@ -127,8 +151,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F477D891F70589C00B111B6 /* bunny3.jpeg in Resources */,
 				7F249AC61F7050D7002A0220 /* LaunchScreen.storyboard in Resources */,
+				7F477D881F70589C00B111B6 /* bunny2.jpg in Resources */,
 				7F249AC31F7050D7002A0220 /* Assets.xcassets in Resources */,
+				7F477D871F70589C00B111B6 /* bunny1.jpg in Resources */,
 				7F249ABE1F7050D7002A0220 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,9 +167,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F249ABB1F7050D7002A0220 /* ViewController.swift in Sources */,
+				7F249ABB1F7050D7002A0220 /* CollectionViewController.swift in Sources */,
+				7F477D831F70567500B111B6 /* myCell.swift in Sources */,
+				7F477D8D1F70690E00B111B6 /* AddNewDogInfoDelegate.swift in Sources */,
+				7F477D911F708E3400B111B6 /* EditDogInfoDelegate.swift in Sources */,
 				7F249AB91F7050D7002A0220 /* AppDelegate.swift in Sources */,
+				7F477D8B1F705A5000B111B6 /* AddNewImageViewController.swift in Sources */,
 				7F249AC11F7050D7002A0220 /* myDogs.xcdatamodeld in Sources */,
+				7F477D8F1F707E8200B111B6 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +340,7 @@
 				7F249ACC1F7050D7002A0220 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
